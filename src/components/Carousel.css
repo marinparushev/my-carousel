@@ -1,0 +1,151 @@
+.carousel {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+}
+
+.carousel.landscape {
+    flex-direction: row;
+}
+
+.carousel.portrait {
+    flex-direction: column;
+}
+
+.carousel-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 300ms ease;
+    overflow: hidden;
+    padding: 8px;
+}
+
+.carousel-item.landscape.center {
+    width: 80%;
+    height: 100%;
+}
+
+.carousel-item.landscape.side {
+    width: 10%;
+    height: 100%;
+}
+
+.carousel-item.portrait.center {
+    width: 100%;
+    height: 80%;
+}
+
+.carousel-item.portrait.side {
+    width: 100%;
+    height: 10%;
+}
+
+.carousel-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    transition: opacity 300ms ease;
+}
+
+.carousel-image.center {
+    object-fit: contain;
+    opacity: 1;
+}
+
+.carousel-image.side {
+    object-fit: cover;
+    opacity: 0.5;
+}
+
+.carousel-image.invisible {
+    visibility: hidden;
+}
+
+.carousel-image.visible {
+    visibility: visible;
+}
+
+.loader {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+}
+
+.spinner {
+    width: 32px;
+    height: 32px;
+    border: 4px solid #ccc;
+    border-top: 4px solid #3b82f6;
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.error-message {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ef4444;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 1rem;
+}
+
+.error-message {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ef4444;
+    font-weight: bold;
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 1rem;
+    padding: 1rem;
+}
+
+.error-message.landscape {
+    flex-direction: column;
+}
+
+.error-message.portrait {
+    flex-direction: row;
+    gap: 0.5rem;
+}
+
+.retry-button {
+    margin-top: 0.5rem;
+    padding: 0.4rem 0.8rem;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.2s ease;
+}
+
+.error-message.portrait .retry-button {
+    margin-top: 0;
+}
+
+.retry-button:hover {
+    background: #2563eb;
+}

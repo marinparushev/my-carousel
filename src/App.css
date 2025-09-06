@@ -1,0 +1,13 @@
+#root {
+    height: 100%;
+    width: 100%;
+}
+
+#carousel-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+#carousel-container.padding-vertical {
+    padding: 10vh 0;
+}
